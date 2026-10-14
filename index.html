@@ -87,7 +87,7 @@ function render(data) {
     return;
   }
   const now = new Date();
-  const today = now.toISOString().slice(0,10);
+  const today = new Intl.DateTimeFormat('en-CA', {timeZone:'Europe/Kyiv', year:'numeric', month:'2-digit', day:'2-digit'}).format(now);
   if (data.date && data.date !== today) {
     renderUnavailable('Наявні дані не відповідають сьогоднішній даті. Перевірте офіційний сайт.');
     return;
